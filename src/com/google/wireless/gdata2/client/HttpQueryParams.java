@@ -1,6 +1,6 @@
 // Copyright 2007 The Android Open Source Project
 
-package com.google.wireless.gdata.client;
+package com.google.wireless.gdata2.client;
 
 import java.util.Hashtable;
 import java.util.Vector;
@@ -43,10 +43,8 @@ public class HttpQueryParams extends QueryParams {
         url.append('&');
       }
       String name = (String) names.elementAt(i);
-      String value = getParamValue(name);
-      if (value == null) continue;
       url.append(client.encodeUri(name)).append('=');
-      url.append(client.encodeUri(value));
+      url.append(client.encodeUri(getParamValue(name)));
     }
     return url.toString();
   }
